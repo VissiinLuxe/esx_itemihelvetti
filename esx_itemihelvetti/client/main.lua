@@ -494,7 +494,6 @@ AddEventHandler('pesuratti', function()
 			end
 			TaskPlayAnim(GetPlayerPed(-1), "timetable@floyd@clean_kitchen@base", "base", 8.0, -8, -1, 55, 0, 0, 0, 0)
 			Citizen.Wait(400000)
-			SetVehicleDirtLevel(vehicle, 0)
             while not IsControlPressed(0, 73) do
                 if not IsEntityPlayingAnim(GetPlayerPed(-1), "timetable@floyd@clean_kitchen@base", "base", 3) then
                     break
@@ -504,6 +503,7 @@ AddEventHandler('pesuratti', function()
             IsAnimated = false
             StopAnimPlayback(GetPlayerPed(-1), 0, true)
             DeleteObject(prop)
+	SetVehicleDirtLevel(vehicle, 0)
         end)
     end
 end )
